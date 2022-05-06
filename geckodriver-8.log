@@ -1,0 +1,11 @@
+1651732240395	geckodriver	INFO	Listening on 127.0.0.1:61215
+1651732243505	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61216" "-no-remote" "-profile" "C:\\Users\\nttr\\AppData\\Local\\Temp\\rust_mozprofilep3VeBU"
+1651732243814	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\nttr\\AppData\\Local\\Temp\\rust_mozprofilep3VeBU\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:61216/devtools/browser/26c086b9-df39-41d6-bc5c-c8661f0bf8be
+1651732245472	Marionette	INFO	Listening on port 61225
+1651732245547	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1651732266941	Marionette	INFO	Stopped listening on port 61225
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

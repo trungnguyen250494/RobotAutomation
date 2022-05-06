@@ -10,4 +10,5 @@ ${btn_SignIn}   Class:login
 Open LoginPage
         Start browser and maximize  ${URL}  ${Browser}
         Wait and click element  ${btn_SignIn}
-        Close browser window
+        set selenium implicit wait  2s
+        title should be  Login - My Store

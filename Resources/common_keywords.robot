@@ -8,7 +8,7 @@ Start browser and maximize
     [Arguments]  ${URL}    ${Browser}
     Open Browser    ${URL}    ${Browser}
     Maximize Browser Window
-    set selenium speed  2 seconds
+    set selenium speed  2s
 
 Wait and input text
     [Arguments]  ${locator}  ${txt_value}
@@ -21,6 +21,12 @@ Wait and click element
     wait until element is visible  ${locator}
     click element  ${locator}
 
+Get text element
+    [Arguments]  ${locator}
+    wait until element is visible  ${locator}
+    ${test}  get text  ${locator}
+    log  ${test}
+    [Return]  ${test}
 
 Check element visible
     [Arguments]  ${locator}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.1 on win32)" generated="20220505 12:59:49.608" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.10.1 on win32)" generated="20220505 13:31:39.483" rpa="false" schemaversion="3">
 <suite id="s1" name="TC 001 Start Close Browser" source="C:\Users\nttr\PycharmProjects\RobotAutomation\TestCases\TC_001_Start_Close_Browser.robot">
-<test id="s1-t1" name="TC_001 Open Login Page" line="11">
+<test id="s1-t1" name="TC_001 Open Login Page" line="12">
 <kw name="Open LoginPage" library="HomePage">
 <kw name="Start browser and maximize" library="common_keywords">
 <arg>${URL}</arg>
@@ -10,70 +10,95 @@
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220505 12:59:49.862" level="INFO">Opening browser 'Firefox' to base url 'http://automationpractice.com/index.php'.</msg>
-<msg timestamp="20220505 12:59:49.864" level="INFO">Firefox driver log is always forced to to: C:\Users\nttr\PycharmProjects\RobotAutomation\geckodriver-5.log</msg>
-<status status="PASS" starttime="20220505 12:59:49.862" endtime="20220505 13:00:01.974"/>
+<msg timestamp="20220505 13:31:39.776" level="INFO">Opening browser 'Firefox' to base url 'http://automationpractice.com/index.php'.</msg>
+<msg timestamp="20220505 13:31:39.778" level="INFO">Firefox driver log is always forced to to: C:\Users\nttr\PycharmProjects\RobotAutomation\geckodriver-9.log</msg>
+<status status="PASS" starttime="20220505 13:31:39.775" endtime="20220505 13:31:51.070"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220505 13:00:01.974" endtime="20220505 13:00:02.237"/>
+<status status="PASS" starttime="20220505 13:31:51.070" endtime="20220505 13:31:51.331"/>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <arg>2 seconds</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20220505 13:00:02.237" endtime="20220505 13:00:02.237"/>
+<status status="PASS" starttime="20220505 13:31:51.331" endtime="20220505 13:31:51.332"/>
 </kw>
-<status status="PASS" starttime="20220505 12:59:49.862" endtime="20220505 13:00:02.237"/>
+<status status="PASS" starttime="20220505 13:31:39.774" endtime="20220505 13:31:51.332"/>
 </kw>
 <kw name="Wait and click element" library="common_keywords">
 <arg>${btn_SignIn}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220505 13:00:02.238" endtime="20220505 13:00:06.268"/>
+<status status="PASS" starttime="20220505 13:31:51.333" endtime="20220505 13:31:55.395"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220505 13:00:06.269" level="INFO">Clicking element 'Class:login'.</msg>
-<status status="PASS" starttime="20220505 13:00:06.268" endtime="20220505 13:00:12.993"/>
+<msg timestamp="20220505 13:31:55.396" level="INFO">Clicking element 'Class:login'.</msg>
+<status status="PASS" starttime="20220505 13:31:55.396" endtime="20220505 13:32:02.799"/>
 </kw>
-<status status="PASS" starttime="20220505 13:00:02.237" endtime="20220505 13:00:12.993"/>
+<status status="PASS" starttime="20220505 13:31:51.332" endtime="20220505 13:32:02.799"/>
 </kw>
-<kw name="Close browser window" library="common_keywords">
-<kw name="Get Title" library="SeleniumLibrary">
-<var>${Title}</var>
-<doc>Returns the title of the current page.</doc>
-<msg timestamp="20220505 13:00:15.008" level="INFO">${Title} = Login - My Store</msg>
-<status status="PASS" starttime="20220505 13:00:12.994" endtime="20220505 13:00:15.008"/>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Login - My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220505 13:32:04.812" level="INFO">Page title is 'Login - My Store'.</msg>
+<status status="PASS" starttime="20220505 13:32:02.799" endtime="20220505 13:32:04.812"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${Title}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220505 13:00:15.009" level="INFO">Login - My Store</msg>
-<status status="PASS" starttime="20220505 13:00:15.008" endtime="20220505 13:00:15.009"/>
+<status status="PASS" starttime="20220505 13:31:39.774" endtime="20220505 13:32:04.812"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220505 13:00:15.009" endtime="20220505 13:00:17.639"/>
+<status status="PASS" starttime="20220505 13:31:39.772" endtime="20220505 13:32:04.813"/>
+</test>
+<test id="s1-t2" name="TC_002 Create An Account" line="15">
+<kw name="Create An Account" library="LoginPage">
+<kw name="Wait and input text" library="common_keywords">
+<arg>${email_address}</arg>
+<arg>trungtn@yopmail.com</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220505 13:32:04.818" endtime="20220505 13:32:08.865"/>
 </kw>
-<status status="PASS" starttime="20220505 13:00:12.994" endtime="20220505 13:00:17.639"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${txt_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220505 13:32:08.866" level="INFO">Typing text 'trungtn@yopmail.com' into text field 'id:email_create'.</msg>
+<status status="PASS" starttime="20220505 13:32:08.866" endtime="20220505 13:32:14.942"/>
 </kw>
-<status status="PASS" starttime="20220505 12:59:49.862" endtime="20220505 13:00:17.640"/>
+<status status="PASS" starttime="20220505 13:32:04.818" endtime="20220505 13:32:14.942"/>
 </kw>
-<status status="PASS" starttime="20220505 12:59:49.861" endtime="20220505 13:00:17.641"/>
+<kw name="Wait and click element" library="common_keywords">
+<arg>${btn_Submit_Create}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220505 13:32:14.944" endtime="20220505 13:32:18.982"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220505 13:32:18.982" level="INFO">Clicking element 'id:SubmitCreate'.</msg>
+<status status="PASS" starttime="20220505 13:32:18.982" endtime="20220505 13:32:23.253"/>
+</kw>
+<status status="PASS" starttime="20220505 13:32:14.943" endtime="20220505 13:32:23.254"/>
+</kw>
+<status status="PASS" starttime="20220505 13:32:04.817" endtime="20220505 13:32:23.254"/>
+</kw>
+<status status="PASS" starttime="20220505 13:32:04.816" endtime="20220505 13:32:23.255"/>
 </test>
 <doc>Start learning automation</doc>
-<status status="PASS" starttime="20220505 12:59:49.610" endtime="20220505 13:00:17.643"/>
+<status status="PASS" starttime="20220505 13:31:39.485" endtime="20220505 13:32:23.258"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC 001 Start Close Browser">TC 001 Start Close Browser</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="TC 001 Start Close Browser">TC 001 Start Close Browser</stat>
 </suite>
 </statistics>
 <errors>
