@@ -1,4 +1,5 @@
 *** Settings ***
+Library   SeleniumLibrary
 Resource  ../Resources/common_keywords.robot
 Resource  MyAccountPage.robot
 
@@ -86,8 +87,7 @@ Load and Input Personal Data from Excel File
           Select Date of Birth  ${day}  ${month}  ${year}
           Select Location  ${state}  ${country}
           Wait and click element  ${btn_register}
-          ${fullName}= Catenate    ${firstName}   ${lastName}
-          Verify the account name after logged in   ${fullName}
+          Verify the account name after logged in   ${firstName}  ${lastName}
           Log out the user account
 
         END

@@ -8,15 +8,11 @@ ${btn_log_out}  xpath=//nav[1]//a[contains(.,'Sign out')]
 
 *** Keywords ***
 Verify the account name after logged in
-    [Arguments]  ${full_name}
+    [Arguments]  ${firstName}  ${lastName}
     wait until page contains element  ${header_user_info}  10s
-    ${name}  =  get text  ${header_user_info}
-    If  ${full_name} ==  ${name}
-        [Return]  TRUE
-    Else
-        [Return]  FALSE
-    END
-
+    ${fullName}=  Catenate  ${firstName}  ${lastName}
+    ${name}=  get text  ${header_user_info}
+    Should Be Equal  ${fullName}  ${name}
 
 
 Log out the user account
