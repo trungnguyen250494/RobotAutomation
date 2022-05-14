@@ -1,18 +1,24 @@
 *** Settings ***
+
+Documentation  A test suite with a single test for creating a valid account
+...
+...               This test has a workflow that is created using keywords in
+...               the imported resource file.
+
 Library   SeleniumLibrary
 Resource  ../../Pages/HomePage.robot
 Resource  ../../Pages/AuthenticationPage.robot
-Documentation  Start learning automation
-
+Resource  ../../Pages/MyAccountPage.robot
+Resource  ../../Resources/common_keywords.robot
 
 *** Variables ***
 
 *** Test Cases ***
 
 TC_001: Create a valid account
-    Open LoginPage
-    Enter email address to create an account  trungtn@yopmail.com
-    Select Title  Female
-    Input mandatory fields  Trung  Nguyen  test@1234
-    Select Date of Birth  25  4  1994
+    Open Browser to LoginPage
+    Load and Input Personal Data from Excel File  Sheet1
+
+    [Teardown]    Close Browser
+
 

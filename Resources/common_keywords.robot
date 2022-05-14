@@ -1,5 +1,6 @@
 *** Settings ***
 Library   SeleniumLibrary
+Library   ReadDataExcel.py
 
 *** Variables ***
 
@@ -32,6 +33,16 @@ Check element visible
     [Arguments]  ${locator}
     ${present} =  run keyword   element should be visible  ${locator}  10s
     [Return]  ${present}
+
+Read number of rows
+    [Arguments]  ${sheetname}
+    ${max_row} =  fetch_number_of_rows  ${sheetname}
+    [Return]  ${max_row}
+
+Read Excel Data of cell
+    [Arguments]  ${sheetname}  ${row}  ${column}
+    ${cell_data} =  fetch_cell_data  ${sheetname}  ${row}  ${column}
+    [Return]  ${cell_data}
 
 Close browser window
     ${Title}=  get title

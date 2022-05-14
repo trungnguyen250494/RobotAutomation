@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.1 on win32)" generated="20220506 20:03:30.120" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.10.1 on win32)" generated="20220514 19:49:11.728" rpa="false" schemaversion="3">
 <suite id="s1" name="Login Function" source="C:\Users\nttr\PycharmProjects\RobotAutomation\TestCases\Login_Function">
 <suite id="s1-s1" name="TC 001 CreateAccount" source="C:\Users\nttr\PycharmProjects\RobotAutomation\TestCases\Login_Function\TC_001_CreateAccount.robot">
-<test id="s1-s1-t1" name="TC_001: Create a valid account" line="12">
-<kw name="Open LoginPage" library="HomePage">
+<test id="s1-s1-t1" name="TC_001: Create a valid account" line="18">
+<kw name="Open Browser to LoginPage" library="HomePage">
 <kw name="Start browser and maximize" library="common_keywords">
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
@@ -11,137 +11,402 @@
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220506 20:03:30.374" level="INFO">Opening browser 'Firefox' to base url 'http://automationpractice.com/index.php'.</msg>
-<msg timestamp="20220506 20:03:30.377" level="INFO">Firefox driver log is always forced to to: C:\Users\nttr\PycharmProjects\RobotAutomation\TestCases\geckodriver-40.log</msg>
-<status status="PASS" starttime="20220506 20:03:30.374" endtime="20220506 20:03:41.986"/>
+<msg timestamp="20220514 19:49:12.315" level="INFO">Opening browser 'Firefox' to base url 'http://automationpractice.com/index.php'.</msg>
+<msg timestamp="20220514 19:49:12.339" level="INFO">Firefox driver log is always forced to to: C:\Users\nttr\PycharmProjects\RobotAutomation\TestCases\geckodriver-76.log</msg>
+<status status="PASS" starttime="20220514 19:49:12.314" endtime="20220514 19:49:25.037"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220506 20:03:41.986" endtime="20220506 20:03:42.242"/>
+<status status="PASS" starttime="20220514 19:49:25.037" endtime="20220514 19:49:25.300"/>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <arg>2s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20220506 20:03:42.242" endtime="20220506 20:03:42.242"/>
+<status status="PASS" starttime="20220514 19:49:25.301" endtime="20220514 19:49:25.301"/>
 </kw>
-<status status="PASS" starttime="20220506 20:03:30.373" endtime="20220506 20:03:42.243"/>
+<status status="PASS" starttime="20220514 19:49:12.314" endtime="20220514 19:49:25.301"/>
 </kw>
 <kw name="Wait and click element" library="common_keywords">
 <arg>${btn_SignIn}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220506 20:03:42.243" endtime="20220506 20:03:46.289"/>
+<status status="PASS" starttime="20220514 19:49:25.302" endtime="20220514 19:49:29.358"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220506 20:03:46.290" level="INFO">Clicking element 'Class:login'.</msg>
-<status status="PASS" starttime="20220506 20:03:46.289" endtime="20220506 20:03:52.570"/>
+<msg timestamp="20220514 19:49:29.359" level="INFO">Clicking element 'Class:login'.</msg>
+<status status="PASS" starttime="20220514 19:49:29.358" endtime="20220514 19:49:36.002"/>
 </kw>
-<status status="PASS" starttime="20220506 20:03:42.243" endtime="20220506 20:03:52.570"/>
+<status status="PASS" starttime="20220514 19:49:25.301" endtime="20220514 19:49:36.002"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>2s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220506 20:03:52.571" endtime="20220506 20:03:54.583"/>
+<status status="PASS" starttime="20220514 19:49:36.003" endtime="20220514 19:49:38.021"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Login - My Store</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20220506 20:03:56.599" level="INFO">Page title is 'Login - My Store'.</msg>
-<status status="PASS" starttime="20220506 20:03:54.584" endtime="20220506 20:03:56.599"/>
+<msg timestamp="20220514 19:49:40.037" level="INFO">Page title is 'Login - My Store'.</msg>
+<status status="PASS" starttime="20220514 19:49:38.022" endtime="20220514 19:49:40.037"/>
 </kw>
-<status status="PASS" starttime="20220506 20:03:30.373" endtime="20220506 20:03:56.599"/>
+<status status="PASS" starttime="20220514 19:49:12.314" endtime="20220514 19:49:40.038"/>
+</kw>
+<kw name="Load and Input Personal Data from Excel File" library="AuthenticationPage">
+<arg>Sheet1</arg>
+<kw name="Read number of rows" library="common_keywords">
+<var>${row}</var>
+<arg>${sheetname}</arg>
+<kw name="Fetch Number Of Rows" library="ReadDataExcel">
+<var>${max_row}</var>
+<arg>${sheetname}</arg>
+<msg timestamp="20220514 19:49:40.041" level="INFO">${max_row} = 3</msg>
+<status status="PASS" starttime="20220514 19:49:40.040" endtime="20220514 19:49:40.041"/>
+</kw>
+<msg timestamp="20220514 19:49:40.041" level="INFO">${row} = 3</msg>
+<status status="PASS" starttime="20220514 19:49:40.040" endtime="20220514 19:49:40.042"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>2</value>
+<value>${row}+1</value>
+<iter>
+<var name="${i}">2</var>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${email}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.044" level="INFO">${cell_data} = trungtn9@yopmail.com</msg>
+<status status="PASS" starttime="20220514 19:49:40.043" endtime="20220514 19:49:40.044"/>
+</kw>
+<msg timestamp="20220514 19:49:40.045" level="INFO">${email} = trungtn9@yopmail.com</msg>
+<status status="PASS" starttime="20220514 19:49:40.042" endtime="20220514 19:49:40.045"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${sex}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.046" level="INFO">${cell_data} = Male</msg>
+<status status="PASS" starttime="20220514 19:49:40.046" endtime="20220514 19:49:40.046"/>
+</kw>
+<msg timestamp="20220514 19:49:40.047" level="INFO">${sex} = Male</msg>
+<status status="PASS" starttime="20220514 19:49:40.045" endtime="20220514 19:49:40.047"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${firstName}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>3</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.048" level="INFO">${cell_data} = Trung</msg>
+<status status="PASS" starttime="20220514 19:49:40.047" endtime="20220514 19:49:40.048"/>
+</kw>
+<msg timestamp="20220514 19:49:40.048" level="INFO">${firstName} = Trung</msg>
+<status status="PASS" starttime="20220514 19:49:40.047" endtime="20220514 19:49:40.048"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${lastName}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>4</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.048" level="INFO">${cell_data} = Nguyen</msg>
+<status status="PASS" starttime="20220514 19:49:40.048" endtime="20220514 19:49:40.048"/>
+</kw>
+<msg timestamp="20220514 19:49:40.049" level="INFO">${lastName} = Nguyen</msg>
+<status status="PASS" starttime="20220514 19:49:40.048" endtime="20220514 19:49:40.049"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${pwd}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>5</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.049" level="INFO">${cell_data} = test@1234</msg>
+<status status="PASS" starttime="20220514 19:49:40.049" endtime="20220514 19:49:40.049"/>
+</kw>
+<msg timestamp="20220514 19:49:40.049" level="INFO">${pwd} = test@1234</msg>
+<status status="PASS" starttime="20220514 19:49:40.049" endtime="20220514 19:49:40.049"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${day}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>6</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.050" level="INFO">${cell_data} = 1</msg>
+<status status="PASS" starttime="20220514 19:49:40.050" endtime="20220514 19:49:40.050"/>
+</kw>
+<msg timestamp="20220514 19:49:40.050" level="INFO">${day} = 1</msg>
+<status status="PASS" starttime="20220514 19:49:40.049" endtime="20220514 19:49:40.050"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${month}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>7</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.051" level="INFO">${cell_data} = 1</msg>
+<status status="PASS" starttime="20220514 19:49:40.051" endtime="20220514 19:49:40.051"/>
+</kw>
+<msg timestamp="20220514 19:49:40.051" level="INFO">${month} = 1</msg>
+<status status="PASS" starttime="20220514 19:49:40.050" endtime="20220514 19:49:40.051"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${year}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>8</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.052" level="INFO">${cell_data} = 1990</msg>
+<status status="PASS" starttime="20220514 19:49:40.051" endtime="20220514 19:49:40.052"/>
+</kw>
+<msg timestamp="20220514 19:49:40.052" level="INFO">${year} = 1990</msg>
+<status status="PASS" starttime="20220514 19:49:40.051" endtime="20220514 19:49:40.052"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${address}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>9</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.052" level="INFO">${cell_data} = 123 Street</msg>
+<status status="PASS" starttime="20220514 19:49:40.052" endtime="20220514 19:49:40.052"/>
+</kw>
+<msg timestamp="20220514 19:49:40.053" level="INFO">${address} = 123 Street</msg>
+<status status="PASS" starttime="20220514 19:49:40.052" endtime="20220514 19:49:40.053"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${city}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>10</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.053" level="INFO">${cell_data} = Dallas</msg>
+<status status="PASS" starttime="20220514 19:49:40.053" endtime="20220514 19:49:40.053"/>
+</kw>
+<msg timestamp="20220514 19:49:40.053" level="INFO">${city} = Dallas</msg>
+<status status="PASS" starttime="20220514 19:49:40.053" endtime="20220514 19:49:40.054"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${state}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>11</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.054" level="INFO">${cell_data} = Indiana</msg>
+<status status="PASS" starttime="20220514 19:49:40.054" endtime="20220514 19:49:40.054"/>
+</kw>
+<msg timestamp="20220514 19:49:40.054" level="INFO">${state} = Indiana</msg>
+<status status="PASS" starttime="20220514 19:49:40.054" endtime="20220514 19:49:40.054"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${zip}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>12</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.055" level="INFO">${cell_data} = 46001</msg>
+<status status="PASS" starttime="20220514 19:49:40.055" endtime="20220514 19:49:40.055"/>
+</kw>
+<msg timestamp="20220514 19:49:40.055" level="INFO">${zip} = 46001</msg>
+<status status="PASS" starttime="20220514 19:49:40.054" endtime="20220514 19:49:40.055"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${country}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>13</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.056" level="INFO">${cell_data} = United States</msg>
+<status status="PASS" starttime="20220514 19:49:40.056" endtime="20220514 19:49:40.056"/>
+</kw>
+<msg timestamp="20220514 19:49:40.056" level="INFO">${country} = United States</msg>
+<status status="PASS" starttime="20220514 19:49:40.055" endtime="20220514 19:49:40.056"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${mobile}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>14</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.057" level="INFO">${cell_data} = 12345678</msg>
+<status status="PASS" starttime="20220514 19:49:40.056" endtime="20220514 19:49:40.057"/>
+</kw>
+<msg timestamp="20220514 19:49:40.057" level="INFO">${mobile} = 12345678</msg>
+<status status="PASS" starttime="20220514 19:49:40.056" endtime="20220514 19:49:40.057"/>
+</kw>
+<kw name="Read Excel Data of cell" library="common_keywords">
+<var>${address_allias}</var>
+<arg>${sheetname}</arg>
+<arg>${i}</arg>
+<arg>15</arg>
+<kw name="Fetch Cell Data" library="ReadDataExcel">
+<var>${cell_data}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<msg timestamp="20220514 19:49:40.057" level="INFO">${cell_data} = abc</msg>
+<status status="PASS" starttime="20220514 19:49:40.057" endtime="20220514 19:49:40.057"/>
+</kw>
+<msg timestamp="20220514 19:49:40.058" level="INFO">${address_allias} = abc</msg>
+<status status="PASS" starttime="20220514 19:49:40.057" endtime="20220514 19:49:40.058"/>
 </kw>
 <kw name="Enter email address to create an account" library="AuthenticationPage">
-<arg>trungtn@yopmail.com</arg>
+<arg>${email}</arg>
 <kw name="Wait and input text" library="common_keywords">
 <arg>${email_address}</arg>
 <arg>${email_value}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220506 20:03:56.602" endtime="20220506 20:04:00.635"/>
+<status status="PASS" starttime="20220514 19:49:40.058" endtime="20220514 19:49:44.098"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>${txt_value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220506 20:04:00.636" level="INFO">Typing text 'trungtn@yopmail.com' into text field 'id:email_create'.</msg>
-<status status="PASS" starttime="20220506 20:04:00.635" endtime="20220506 20:04:06.696"/>
+<msg timestamp="20220514 19:49:44.099" level="INFO">Typing text 'trungtn9@yopmail.com' into text field 'id:email_create'.</msg>
+<status status="PASS" starttime="20220514 19:49:44.098" endtime="20220514 19:49:50.180"/>
 </kw>
-<status status="PASS" starttime="20220506 20:03:56.601" endtime="20220506 20:04:06.697"/>
+<status status="PASS" starttime="20220514 19:49:40.058" endtime="20220514 19:49:50.181"/>
 </kw>
 <kw name="Wait and click element" library="common_keywords">
 <arg>${btn_Submit_Create}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220506 20:04:06.698" endtime="20220506 20:04:10.738"/>
+<status status="PASS" starttime="20220514 19:49:50.182" endtime="20220514 19:49:54.226"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220506 20:04:10.739" level="INFO">Clicking element 'id:SubmitCreate'.</msg>
-<status status="PASS" starttime="20220506 20:04:10.738" endtime="20220506 20:04:15.019"/>
+<msg timestamp="20220514 19:49:54.227" level="INFO">Clicking element 'id:SubmitCreate'.</msg>
+<status status="PASS" starttime="20220514 19:49:54.226" endtime="20220514 19:49:58.511"/>
 </kw>
-<status status="PASS" starttime="20220506 20:04:06.697" endtime="20220506 20:04:15.020"/>
+<status status="PASS" starttime="20220514 19:49:50.181" endtime="20220514 19:49:58.511"/>
 </kw>
-<status status="PASS" starttime="20220506 20:03:56.600" endtime="20220506 20:04:15.020"/>
+<status status="PASS" starttime="20220514 19:49:40.058" endtime="20220514 19:49:58.512"/>
 </kw>
 <kw name="Select Title" library="AuthenticationPage">
-<arg>Female</arg>
+<arg>${sex}</arg>
 <if>
 <branch type="IF" condition="'${sex}' == 'Male'">
 <kw name="Wait and click element" library="common_keywords">
 <arg>${rd_title_mr}</arg>
-<status status="NOT RUN" starttime="20220506 20:04:15.022" endtime="20220506 20:04:15.022"/>
-</kw>
-<status status="NOT RUN" starttime="20220506 20:04:15.022" endtime="20220506 20:04:15.022"/>
-</branch>
-<branch type="ELSE">
-<kw name="Wait and click element" library="common_keywords">
-<arg>${rd_title_mrs}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220506 20:04:15.023" endtime="20220506 20:04:19.054"/>
+<status status="PASS" starttime="20220514 19:49:58.514" endtime="20220514 19:50:02.549"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220506 20:04:19.056" level="INFO">Clicking element 'xpath=//label[contains(.,'Mrs.')]'.</msg>
-<status status="PASS" starttime="20220506 20:04:19.055" endtime="20220506 20:04:23.307"/>
+<msg timestamp="20220514 19:50:02.551" level="INFO">Clicking element 'xpath=//label[contains(.,'Mr.')]'.</msg>
+<status status="PASS" starttime="20220514 19:50:02.550" endtime="20220514 19:50:06.796"/>
 </kw>
-<status status="PASS" starttime="20220506 20:04:15.022" endtime="20220506 20:04:23.307"/>
+<status status="PASS" starttime="20220514 19:49:58.513" endtime="20220514 19:50:06.796"/>
 </kw>
-<status status="PASS" starttime="20220506 20:04:15.022" endtime="20220506 20:04:23.307"/>
+<status status="PASS" starttime="20220514 19:49:58.513" endtime="20220514 19:50:06.797"/>
 </branch>
-<status status="PASS" starttime="20220506 20:04:15.021" endtime="20220506 20:04:23.308"/>
+<branch type="ELSE">
+<kw name="Wait and click element" library="common_keywords">
+<arg>${rd_title_mrs}</arg>
+<status status="NOT RUN" starttime="20220514 19:50:06.798" endtime="20220514 19:50:06.798"/>
+</kw>
+<status status="NOT RUN" starttime="20220514 19:50:06.797" endtime="20220514 19:50:06.798"/>
+</branch>
+<status status="PASS" starttime="20220514 19:49:58.513" endtime="20220514 19:50:06.798"/>
 </if>
-<status status="PASS" starttime="20220506 20:04:15.021" endtime="20220506 20:04:23.308"/>
+<status status="PASS" starttime="20220514 19:49:58.512" endtime="20220514 19:50:06.798"/>
 </kw>
 <kw name="Input mandatory fields" library="AuthenticationPage">
-<arg>Trung</arg>
-<arg>Nguyen</arg>
-<arg>test@1234</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<arg>${pwd}</arg>
+<arg>${address}</arg>
+<arg>${city}</arg>
+<arg>${zip}</arg>
+<arg>${mobile}</arg>
+<arg>${address_allias}</arg>
 <kw name="Wait and input text" library="common_keywords">
 <arg>${input_FirstName}</arg>
 <arg>${firstName_value}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220506 20:04:23.310" endtime="20220506 20:04:27.355"/>
+<status status="PASS" starttime="20220514 19:50:06.801" endtime="20220514 19:50:10.838"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>${txt_value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220506 20:04:27.357" level="INFO">Typing text 'Trung' into text field 'id:customer_firstname'.</msg>
-<status status="PASS" starttime="20220506 20:04:27.355" endtime="20220506 20:04:33.419"/>
+<msg timestamp="20220514 19:50:10.840" level="INFO">Typing text 'Trung' into text field 'id:customer_firstname'.</msg>
+<status status="PASS" starttime="20220514 19:50:10.839" endtime="20220514 19:50:16.912"/>
 </kw>
-<status status="PASS" starttime="20220506 20:04:23.309" endtime="20220506 20:04:33.420"/>
+<status status="PASS" starttime="20220514 19:50:06.800" endtime="20220514 19:50:16.913"/>
 </kw>
 <kw name="Wait and input text" library="common_keywords">
 <arg>${input_LastName}</arg>
@@ -149,16 +414,16 @@
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220506 20:04:33.421" endtime="20220506 20:04:37.454"/>
+<status status="PASS" starttime="20220514 19:50:16.914" endtime="20220514 19:50:20.958"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>${txt_value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220506 20:04:37.455" level="INFO">Typing text 'Nguyen' into text field 'id:customer_lastname'.</msg>
-<status status="PASS" starttime="20220506 20:04:37.454" endtime="20220506 20:04:43.517"/>
+<msg timestamp="20220514 19:50:20.960" level="INFO">Typing text 'Nguyen' into text field 'id:customer_lastname'.</msg>
+<status status="PASS" starttime="20220514 19:50:20.959" endtime="20220514 19:50:27.014"/>
 </kw>
-<status status="PASS" starttime="20220506 20:04:33.420" endtime="20220506 20:04:43.517"/>
+<status status="PASS" starttime="20220514 19:50:16.913" endtime="20220514 19:50:27.014"/>
 </kw>
 <kw name="Wait and input text" library="common_keywords">
 <arg>${input_Password}</arg>
@@ -166,64 +431,210 @@
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220506 20:04:43.518" endtime="20220506 20:04:47.556"/>
+<status status="PASS" starttime="20220514 19:50:27.015" endtime="20220514 19:50:31.058"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>${txt_value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220506 20:04:47.558" level="INFO">Typing text 'test@1234' into text field 'id:passwd'.</msg>
-<status status="PASS" starttime="20220506 20:04:47.557" endtime="20220506 20:04:53.620"/>
+<msg timestamp="20220514 19:50:31.059" level="INFO">Typing text 'test@1234' into text field 'id:passwd'.</msg>
+<status status="PASS" starttime="20220514 19:50:31.058" endtime="20220514 19:50:37.125"/>
 </kw>
-<status status="PASS" starttime="20220506 20:04:43.518" endtime="20220506 20:04:53.620"/>
+<status status="PASS" starttime="20220514 19:50:27.014" endtime="20220514 19:50:37.126"/>
 </kw>
-<status status="PASS" starttime="20220506 20:04:23.309" endtime="20220506 20:04:53.621"/>
+<kw name="Wait and input text" library="common_keywords">
+<arg>${input_address}</arg>
+<arg>${address_value}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220514 19:50:37.127" endtime="20220514 19:50:41.163"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${txt_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220514 19:50:41.165" level="INFO">Typing text '123 Street' into text field 'id:address1'.</msg>
+<status status="PASS" starttime="20220514 19:50:41.164" endtime="20220514 19:50:47.233"/>
+</kw>
+<status status="PASS" starttime="20220514 19:50:37.126" endtime="20220514 19:50:47.234"/>
+</kw>
+<kw name="Wait and input text" library="common_keywords">
+<arg>${input_city}</arg>
+<arg>${city_value}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220514 19:50:47.235" endtime="20220514 19:50:51.264"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${txt_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220514 19:50:51.265" level="INFO">Typing text 'Dallas' into text field 'id:city'.</msg>
+<status status="PASS" starttime="20220514 19:50:51.265" endtime="20220514 19:50:57.321"/>
+</kw>
+<status status="PASS" starttime="20220514 19:50:47.234" endtime="20220514 19:50:57.322"/>
+</kw>
+<kw name="Wait and input text" library="common_keywords">
+<arg>${input_zip}</arg>
+<arg>${zipcode}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220514 19:50:57.323" endtime="20220514 19:51:01.368"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${txt_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220514 19:51:01.369" level="INFO">Typing text '46001' into text field 'id:postcode'.</msg>
+<status status="PASS" starttime="20220514 19:51:01.369" endtime="20220514 19:51:07.421"/>
+</kw>
+<status status="PASS" starttime="20220514 19:50:57.322" endtime="20220514 19:51:07.422"/>
+</kw>
+<kw name="Wait and input text" library="common_keywords">
+<arg>${input_mobile}</arg>
+<arg>${mobile_value}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220514 19:51:07.423" endtime="20220514 19:51:11.455"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${txt_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220514 19:51:11.457" level="INFO">Typing text '12345678' into text field 'id:phone_mobile'.</msg>
+<status status="PASS" starttime="20220514 19:51:11.456" endtime="20220514 19:51:17.518"/>
+</kw>
+<status status="PASS" starttime="20220514 19:51:07.422" endtime="20220514 19:51:17.519"/>
+</kw>
+<kw name="Wait and input text" library="common_keywords">
+<arg>${input_address_allias}</arg>
+<arg>${allias_value}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220514 19:51:17.520" endtime="20220514 19:51:21.564"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${txt_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220514 19:51:21.566" level="INFO">Typing text 'abc' into text field 'id:alias'.</msg>
+<status status="PASS" starttime="20220514 19:51:21.565" endtime="20220514 19:51:27.622"/>
+</kw>
+<status status="PASS" starttime="20220514 19:51:17.519" endtime="20220514 19:51:27.623"/>
+</kw>
+<status status="PASS" starttime="20220514 19:50:06.798" endtime="20220514 19:51:27.623"/>
 </kw>
 <kw name="Select Date of Birth" library="AuthenticationPage">
-<arg>25</arg>
-<arg>4</arg>
-<arg>1994</arg>
+<arg>${day}</arg>
+<arg>${month}</arg>
+<arg>${year}</arg>
 <kw name="Select From List By Value" library="SeleniumLibrary">
 <arg>${dropdown_day}</arg>
 <arg>${day}</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20220506 20:04:53.623" level="INFO">Selecting options from selection list 'xpath=//select[@id='days']' by value 25.</msg>
-<status status="PASS" starttime="20220506 20:04:53.622" endtime="20220506 20:05:07.960"/>
+<msg timestamp="20220514 19:51:27.625" level="INFO">Selecting options from selection list 'xpath=//select[@id='days']' by value 1.</msg>
+<status status="PASS" starttime="20220514 19:51:27.625" endtime="20220514 19:51:41.958"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
 <arg>${dropdown_month}</arg>
 <arg>${month}</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20220506 20:05:07.961" level="INFO">Selecting options from selection list 'xpath=//select[@id='months']' by value 4.</msg>
-<status status="PASS" starttime="20220506 20:05:07.960" endtime="20220506 20:05:22.260"/>
+<msg timestamp="20220514 19:51:41.960" level="INFO">Selecting options from selection list 'xpath=//select[@id='months']' by value 1.</msg>
+<status status="PASS" starttime="20220514 19:51:41.958" endtime="20220514 19:51:56.292"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
 <arg>${dropdown_year}</arg>
 <arg>${year}</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20220506 20:05:22.262" level="INFO">Selecting options from selection list 'xpath=//select[@id='years']' by value 1994.</msg>
-<status status="PASS" starttime="20220506 20:05:22.261" endtime="20220506 20:05:36.603"/>
+<msg timestamp="20220514 19:51:56.293" level="INFO">Selecting options from selection list 'xpath=//select[@id='years']' by value 1990.</msg>
+<status status="PASS" starttime="20220514 19:51:56.292" endtime="20220514 19:52:10.626"/>
 </kw>
-<status status="PASS" starttime="20220506 20:04:53.622" endtime="20220506 20:05:36.603"/>
+<status status="PASS" starttime="20220514 19:51:27.623" endtime="20220514 19:52:10.627"/>
 </kw>
-<status status="PASS" starttime="20220506 20:03:30.372" endtime="20220506 20:05:36.604"/>
+<kw name="Select Location" library="AuthenticationPage">
+<arg>${state}</arg>
+<arg>${country}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${dropdown_state}</arg>
+<arg>${state}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220514 19:52:10.629" level="INFO">Selecting options from selection list 'xpath=//select[@id='id_state']' by label Indiana.</msg>
+<status status="PASS" starttime="20220514 19:52:10.628" endtime="20220514 19:52:24.947"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${dropdown_country}</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220514 19:52:24.949" level="INFO">Selecting options from selection list 'xpath=//select[@id='id_country']' by label United States.</msg>
+<status status="PASS" starttime="20220514 19:52:24.948" endtime="20220514 19:52:37.037"/>
+</kw>
+<status status="PASS" starttime="20220514 19:52:10.627" endtime="20220514 19:52:37.038"/>
+</kw>
+<kw name="Wait and click element" library="common_keywords">
+<arg>${btn_register}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220514 19:52:37.039" endtime="20220514 19:52:41.080"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220514 19:52:41.082" level="INFO">Clicking element 'xpath=//span[.='Register']'.</msg>
+<status status="PASS" starttime="20220514 19:52:41.081" endtime="20220514 19:52:47.488"/>
+</kw>
+<status status="PASS" starttime="20220514 19:52:37.038" endtime="20220514 19:52:47.488"/>
+</kw>
+<kw name="${fullName}= Catenate">
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+<msg timestamp="20220514 19:52:47.497" level="FAIL">No keyword with name '${fullName}= Catenate' found.</msg>
+<status status="FAIL" starttime="20220514 19:52:47.496" endtime="20220514 19:52:47.497"/>
+</kw>
+<kw name="Verify the account name after logged in" library="MyAccountPage">
+<arg>${fullName}</arg>
+<status status="NOT RUN" starttime="20220514 19:52:47.498" endtime="20220514 19:52:47.498"/>
+</kw>
+<kw name="Log out the user account" library="MyAccountPage">
+<status status="NOT RUN" starttime="20220514 19:52:47.498" endtime="20220514 19:52:47.499"/>
+</kw>
+<status status="FAIL" starttime="20220514 19:49:40.042" endtime="20220514 19:52:47.499"/>
+</iter>
+<status status="FAIL" starttime="20220514 19:49:40.042" endtime="20220514 19:52:47.499"/>
+</for>
+<status status="FAIL" starttime="20220514 19:49:40.039" endtime="20220514 19:52:47.500"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220514 19:52:47.501" endtime="20220514 19:52:49.958"/>
+</kw>
+<status status="FAIL" starttime="20220514 19:49:12.312" endtime="20220514 19:52:49.959">No keyword with name '${fullName}= Catenate' found.</status>
 </test>
-<doc>Start learning automation</doc>
-<status status="PASS" starttime="20220506 20:03:30.146" endtime="20220506 20:05:36.607"/>
+<doc>A test suite with a single test for creating a valid account
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="FAIL" starttime="20220514 19:49:11.755" endtime="20220514 19:52:49.961"/>
 </suite>
-<status status="PASS" starttime="20220506 20:03:30.122" endtime="20220506 20:05:36.609"/>
+<status status="FAIL" starttime="20220514 19:49:11.730" endtime="20220514 19:52:49.964"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Login Function">Login Function</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="TC 001 CreateAccount">Login Function.TC 001 CreateAccount</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Login Function">Login Function</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="TC 001 CreateAccount">Login Function.TC 001 CreateAccount</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220514 19:49:12.308" level="ERROR">Error in file 'C:\Users\nttr\PycharmProjects\RobotAutomation\Pages\MyAccountPage.robot' on line 17: Setting 'Return' is allowed only once. Only the first value is used.</msg>
 </errors>
 </robot>

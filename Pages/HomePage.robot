@@ -7,7 +7,7 @@ ${URL}    http://automationpractice.com/index.php
 ${btn_SignIn}   Class:login
 
 *** Keywords ***
-Open LoginPage
+Open Browser to LoginPage
         Start browser and maximize  ${URL}  ${Browser}
         Wait and click element  ${btn_SignIn}
         set selenium implicit wait  2s
